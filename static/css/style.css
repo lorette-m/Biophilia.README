@@ -1,0 +1,154 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;  /* Включаем вертикальный скроллинг */
+    width: 100%;         /* Убедитесь, что ширина страницы ограничена 100% */
+    height: 100%;        /* Убедитесь, что высота страницы ограничена 100% */
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    display: block; /* Убедитесь, что body отображается как блочный элемент */
+}
+
+section {
+    display: block; /* Убедитесь, что section — блочный элемент */
+    height: 100%;   /* Заполняем всю доступную высоту */
+}
+
+.intro-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон поверх видео */
+    text-align: center;
+    z-index: 2;
+}
+
+.intro-screen h1 {
+    font-size: 48px;
+    margin: 20px;
+}
+
+.intro-screen p {
+    font-size: 18px;
+}
+
+.music-btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-music-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.intro-music-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+.intro-music-btn.clicked {
+    transform: scale(0.9); /* Эффект уменьшения при нажатии */
+}
+
+.video-group {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Плавный переход */
+}
+
+.video-group.visible {
+    opacity: 1;
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; /* Минимальная ширина видео, чтобы покрыть экран */
+    min-height: 100%; /* Минимальная высота видео, чтобы покрыть экран */
+    width: 100vw;     /* Ширина видео на 100% ширины экрана */
+    height: 100vh;    /* Высота видео на 100% высоты экрана */
+    object-fit: cover;
+    display: none; /* По умолчанию скрываем, только одно будет видно */
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin: 100px auto;
+    width: 80%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон поверх видео */
+}
+
+.content h1 {
+    text-align: center;
+}
+
+.content p {
+    font-size: 20px;
+    line-height: 170%
+}
+
+@media screen and (max-width: 768px) {
+    body, html {
+        width: 100%;
+        overflow-x: hidden;  /* Обеспечиваем, чтобы не было горизонтального скроллинга */
+    }
+
+    .content {
+        margin: 50px auto;
+        width: 90%;
+        text-align: left;
+    }
+
+    .content h1 {
+        text-align: right;
+    }
+
+    .content p {
+        font-size: 15px;
+        line-height: 170%;
+    }
+
+    .intro-screen h1 {
+        font-size: 35px;
+        margin: 20px;
+    }
+
+    .intro-screen p {
+        font-size: 13px;
+    }
+
+    .background-video {
+        width: 100vw;   /* Обеспечиваем, чтобы видео не выходило за пределы экрана */
+        height: 100vh;
+    }
+}
