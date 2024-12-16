@@ -117,6 +117,42 @@ section {
     line-height: 170%
 }
 
+.site-footer {
+  background-color: rgba(0, 0, 0, 0); /* Цвет фона */
+  color: #ffffff; /* Цвет текста */
+  padding: 10px 20px; /* Внутренние отступы */
+  text-align: center; /* Центровка содержимого */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Отступ между иконкой и текстом */
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Убираем подчеркивание у ссылки */
+  color: #ffffff; /* Цвет текста */
+  font-size: 1rem; /* Размер текста */
+  transition: color 0.3s ease; /* Плавная смена цвета при наведении */
+}
+
+.github-link:hover {
+  color: #1ba638; /* Изменение цвета текста при наведении */
+}
+
+.github-icon {
+  width: 24px; /* Размер иконки */
+  height: 24px;
+}
+
+
 @media screen and (max-width: 768px) {
     body, html {
         width: 100%;
@@ -152,3 +188,4 @@ section {
         height: 100vh;
     }
 }
+
